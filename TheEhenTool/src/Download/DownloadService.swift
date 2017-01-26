@@ -130,8 +130,8 @@ class DownloadService: ServiceBase, XPathParserDelegate {
 //Mark: Download functions
     
     func PromiseToGetSectionNum(WithBookURL urlStrin: String) {
-        var parseConfig: [String: XPathParser.ParseItemConfig] = [:]
-        parseConfig["bookId"] = (Source: urlString, SourceType: .String, SourceModifier: self.config.bookIdRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
+//        var parseConfig: [String: XPathParser.ParseItemConfig] = [:]
+//        parseConfig["bookId"] = (Source: urlString, SourceType: .String, SourceModifier: self.config.bookIdRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
     }
     
     func PromiseToFetchPageInfo(
