@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Kanna (2.1.1)
+  - PromiseKit (4.1.3):
+    - PromiseKit/Foundation (= 4.1.3)
+    - PromiseKit/QuartzCore (= 4.1.3)
+    - PromiseKit/UIKit (= 4.1.3)
+  - PromiseKit/Alamofire (4.1.3):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (4.1.3)
+  - PromiseKit/Foundation (4.1.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.1.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.1.3):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Kanna (~> 2.1.0)
+  - PromiseKit (~> 4.0)
+  - PromiseKit/Alamofire
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  PromiseKit: 56baec63efa89210c023260879435a5a6b3bff00
+
+PODFILE CHECKSUM: e591e5fdf5fd40d14ca85474fa4b300beba1fe6f
+
+COCOAPODS: 1.1.1

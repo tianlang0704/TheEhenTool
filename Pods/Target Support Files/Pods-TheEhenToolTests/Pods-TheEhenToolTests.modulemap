@@ -1,0 +1,6 @@
+framework module Pods_TheEhenToolTests {
+  umbrella header "Pods-TheEhenToolTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

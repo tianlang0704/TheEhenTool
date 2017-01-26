@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ToggleButton.isSelected.didset:ToggleButton.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.layer">
+            </PersistentString>
+            <PersistentString
+               value = "self.layer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static XPathParser.ParseList(InHTML : String, ListXPath : String, ItemConfig : [String : (Source : String?, SourceType : XPathParser.SourceType, SourceModifier : String?, ConversionType : XPathParser.ConversionType, DefaultValue : String?, IsUpdateMatcher : Bool?)]) throws -&gt; [[String : String?]]:XPathParser.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.NextPage() throws -&gt; ():PlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentPageIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PreviewCellStyle1.apply(UICollectionViewLayoutAttributes) -&gt; ():PreviewCellStyle1.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.layoutConstraintImageHeight.constant">
+            </PersistentString>
+            <PersistentString
+               value = "previewAttributes.thumbHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "XPathParser.(PromiseToAppendEntries(ToCoreDataEntity : String, InConainer : NSPersistentContainer, WithData : [[String : String?]]) -&gt; Promise&lt;(NSManagedObjectContext, [NSManagedObject])&gt;).(closure #1).(closure #1):XPathParser.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.NextPage() -&gt; ():PlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentPageIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PreviewService.ParseEHenThumbPage(html : String) throws -&gt; [(id : Int, hrefURL : String, title : String, thumbURL : String)]:PreviewService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "XPathParser.(PromiseToAppendEntries(ToCoreDataEntity : String, InConainer : NSPersistentContainer, WithData : [[String : String?]], IsSyncDownload : Bool) -&gt; Promise&lt;(NSManagedObjectContext, [NSManagedObject])&gt;).(closure #1).(closure #1):XPathParser.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

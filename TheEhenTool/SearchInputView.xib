@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="kBp-6C-gbW" customClass="SearchInputView" customModule="TheEhenTool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ukr-W8-L42">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3PR-26-PKY">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQU-fk-BpT" customClass="MultiSelectionView" customModule="TheEhenTool" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="750" height="30"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="eQU-fk-BpT" firstAttribute="leading" secondItem="3PR-26-PKY" secondAttribute="leading" id="1XU-h8-gdO"/>
+                                <constraint firstItem="eQU-fk-BpT" firstAttribute="height" secondItem="3PR-26-PKY" secondAttribute="height" id="6Qi-65-Pkh"/>
+                                <constraint firstAttribute="height" id="QU6-9N-Ozq"/>
+                                <constraint firstItem="eQU-fk-BpT" firstAttribute="top" secondItem="3PR-26-PKY" secondAttribute="top" id="Rki-SN-vOf"/>
+                                <constraint firstAttribute="height" constant="30" id="XEd-yX-mXg"/>
+                                <constraint firstItem="eQU-fk-BpT" firstAttribute="width" secondItem="3PR-26-PKY" secondAttribute="width" multiplier="2" id="c8p-Mh-D99"/>
+                                <constraint firstAttribute="trailing" secondItem="eQU-fk-BpT" secondAttribute="trailing" priority="250" id="fFT-J1-Z0K"/>
+                                <constraint firstAttribute="bottom" secondItem="eQU-fk-BpT" secondAttribute="bottom" id="ymb-p7-LLO"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="QU6-9N-Ozq"/>
+                                </mask>
+                            </variation>
+                        </scrollView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="center" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="trl-kx-WTA">
+                            <rect key="frame" x="0.0" y="30" width="375" height="35"/>
+                            <color key="backgroundColor" red="0.0" green="0.34812885929999998" blue="0.92553013559999997" alpha="0.84931506850000005" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="mvC-RC-VnC"/>
+                                <constraint firstAttribute="height" id="zYR-Tf-W3v"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="zYR-Tf-W3v"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <outlet property="delegate" destination="kBp-6C-gbW" id="J5a-47-9SQ"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="trl-kx-WTA" secondAttribute="trailing" id="4KW-vb-idw"/>
+                        <constraint firstAttribute="bottom" secondItem="trl-kx-WTA" secondAttribute="bottom" priority="999" id="9NS-rv-oaI"/>
+                        <constraint firstAttribute="trailing" secondItem="3PR-26-PKY" secondAttribute="trailing" id="Q0F-Xc-3kv"/>
+                        <constraint firstItem="3PR-26-PKY" firstAttribute="leading" secondItem="Ukr-W8-L42" secondAttribute="leading" id="Tht-0D-BLw"/>
+                        <constraint firstItem="3PR-26-PKY" firstAttribute="top" secondItem="Ukr-W8-L42" secondAttribute="top" id="YCP-Cw-aoR"/>
+                        <constraint firstItem="trl-kx-WTA" firstAttribute="leading" secondItem="Ukr-W8-L42" secondAttribute="leading" id="d2f-OU-GjC"/>
+                        <constraint firstItem="trl-kx-WTA" firstAttribute="top" secondItem="3PR-26-PKY" secondAttribute="bottom" id="hY2-c1-iwz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ukr-W8-L42" firstAttribute="top" secondItem="kBp-6C-gbW" secondAttribute="top" id="5fc-zX-bId"/>
+                <constraint firstAttribute="trailing" secondItem="Ukr-W8-L42" secondAttribute="trailing" id="b2G-pS-6gq"/>
+                <constraint firstAttribute="bottom" secondItem="Ukr-W8-L42" secondAttribute="bottom" id="cpf-wo-7wf"/>
+                <constraint firstItem="Ukr-W8-L42" firstAttribute="leading" secondItem="kBp-6C-gbW" secondAttribute="leading" id="isw-LV-WD4"/>
+            </constraints>
+            <connections>
+                <outlet property="layoutConstraintContainer" destination="5fc-zX-bId" id="qwW-OT-ghn"/>
+                <outlet property="layoutConstraintSearchBarHeight" destination="mvC-RC-VnC" id="AYH-O8-FmK"/>
+                <outlet property="layoutConstraintSearchBarHide" destination="zYR-Tf-W3v" id="mEv-nO-HOc"/>
+                <outlet property="layoutConstraintToggleBarHeight" destination="XEd-yX-mXg" id="aRZ-x5-MfP"/>
+                <outlet property="layoutConstraintToggleBarHide" destination="QU6-9N-Ozq" id="ApF-gU-HCW"/>
+                <outlet property="multiSelectionView" destination="eQU-fk-BpT" id="WGX-Io-En7"/>
+                <outlet property="searchTextField" destination="trl-kx-WTA" id="1vY-rz-JSe"/>
+            </connections>
+            <point key="canvasLocation" x="-379.5" y="-169.5"/>
+        </view>
+    </objects>
+</document>

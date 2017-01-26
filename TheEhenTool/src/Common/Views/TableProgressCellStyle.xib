@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableProgressCellStyle" id="sMo-dz-nhh" customClass="TableProgressCellStyle" customModule="TheEhenTool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMo-dz-nhh" id="ZGW-mV-KYj">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vcK-jf-Kgg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                        <color key="tintColor" red="0.45176260969999998" green="0.64520063549999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </progressView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-X8-KV1">
+                        <rect key="frame" x="3" y="3" width="93.5" height="93.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="U1e-X8-KV1" secondAttribute="height" multiplier="1:1" id="Tzg-Vq-xPi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvr-rW-v7H">
+                        <rect key="frame" x="101.5" y="8" width="211.5" height="83.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.065850418780000003" green="0.065850418780000003" blue="0.065850418780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hu3-ga-jxV">
+                        <rect key="frame" x="317" y="28" width="50" height="43.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-AE-uyw">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.40478784880000002" blue="0.83937823830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.060669071620000001" green="0.060669071620000001" blue="0.060669071620000001" alpha="0.90140845069999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-pm-NEB">
+                                <rect key="frame" x="0.0" y="20" width="50" height="23.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.40478784880000002" blue="0.83937823830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.060669071620000001" green="0.060669071620000001" blue="0.060669071620000001" alpha="0.90140845069999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="AQr-c3-MsY"/>
+                            <constraint firstItem="dwQ-AE-uyw" firstAttribute="top" secondItem="Hu3-ga-jxV" secondAttribute="top" id="BSl-oF-PS1"/>
+                            <constraint firstAttribute="trailing" secondItem="dwQ-AE-uyw" secondAttribute="trailing" id="DTT-rF-EM9"/>
+                            <constraint firstItem="l5j-pm-NEB" firstAttribute="height" secondItem="dwQ-AE-uyw" secondAttribute="height" id="QUR-7g-Rua"/>
+                            <constraint firstAttribute="trailing" secondItem="l5j-pm-NEB" secondAttribute="trailing" id="ReA-q2-kBS"/>
+                            <constraint firstItem="dwQ-AE-uyw" firstAttribute="bottom" secondItem="l5j-pm-NEB" secondAttribute="top" constant="4" id="Tgx-kr-1Gk"/>
+                            <constraint firstItem="dwQ-AE-uyw" firstAttribute="leading" secondItem="Hu3-ga-jxV" secondAttribute="leading" id="WBe-28-Fwc"/>
+                            <constraint firstAttribute="bottom" secondItem="l5j-pm-NEB" secondAttribute="bottom" id="f52-q0-3A4"/>
+                            <constraint firstItem="l5j-pm-NEB" firstAttribute="leading" secondItem="Hu3-ga-jxV" secondAttribute="leading" id="lWd-AP-7ce"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hu3-ga-jxV" firstAttribute="leading" secondItem="Nvr-rW-v7H" secondAttribute="trailing" constant="4" id="04N-vS-DnL"/>
+                    <constraint firstItem="U1e-X8-KV1" firstAttribute="left" secondItem="ZGW-mV-KYj" secondAttribute="left" constant="3" id="67h-s6-D2A"/>
+                    <constraint firstItem="vcK-jf-Kgg" firstAttribute="left" secondItem="ZGW-mV-KYj" secondAttribute="left" id="6AD-g9-1qU"/>
+                    <constraint firstAttribute="bottom" secondItem="U1e-X8-KV1" secondAttribute="bottom" constant="3" id="EK4-Sy-X2U"/>
+                    <constraint firstAttribute="bottom" secondItem="vcK-jf-Kgg" secondAttribute="bottom" id="FXa-Qu-hUK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Hu3-ga-jxV" secondAttribute="bottom" constant="20" id="JOy-y8-3E6"/>
+                    <constraint firstAttribute="right" secondItem="vcK-jf-Kgg" secondAttribute="right" id="N2C-bp-9R6"/>
+                    <constraint firstItem="Hu3-ga-jxV" firstAttribute="top" secondItem="ZGW-mV-KYj" secondAttribute="topMargin" constant="20" id="PVH-tN-iLz"/>
+                    <constraint firstItem="Nvr-rW-v7H" firstAttribute="leading" secondItem="U1e-X8-KV1" secondAttribute="trailing" constant="5" id="Suf-pa-KKY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Hu3-ga-jxV" secondAttribute="trailing" id="VOi-cr-wu1"/>
+                    <constraint firstItem="vcK-jf-Kgg" firstAttribute="top" secondItem="ZGW-mV-KYj" secondAttribute="top" id="XMl-M3-epz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Nvr-rW-v7H" secondAttribute="bottom" id="c8W-uE-d2N"/>
+                    <constraint firstItem="U1e-X8-KV1" firstAttribute="top" secondItem="ZGW-mV-KYj" secondAttribute="top" constant="3" id="e2j-9B-Erj"/>
+                    <constraint firstItem="Nvr-rW-v7H" firstAttribute="top" secondItem="ZGW-mV-KYj" secondAttribute="topMargin" id="lrI-cp-hG5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="page" destination="l5j-pm-NEB" id="gjf-Bd-929"/>
+                <outlet property="percentage" destination="dwQ-AE-uyw" id="hHZ-98-mbn"/>
+                <outlet property="progress" destination="vcK-jf-Kgg" id="Snf-V9-kx1"/>
+                <outlet property="thumb" destination="U1e-X8-KV1" id="I7o-mK-pNG"/>
+                <outlet property="title" destination="Nvr-rW-v7H" id="yHQ-bL-guN"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

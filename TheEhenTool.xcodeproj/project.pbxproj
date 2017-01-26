@@ -1,0 +1,997 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		223588F6A88DEF69B6A7090F /* Pods_TheEhenToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B17AB1F6D877A37756F33 /* Pods_TheEhenToolUITests.framework */; };
+		9D02B5BD1E317AF40062499B /* SyncronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02B5BC1E317AF40062499B /* SyncronizedArray.swift */; };
+		9D02B5BE1E32156F0062499B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80EA041E20338F00172E11 /* AppDelegate.swift */; };
+		9D02B5C21E33303B0062499B /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02B5C11E33303B0062499B /* Mutex.swift */; };
+		9D02B5C41E339BCF0062499B /* SyncBookDownloadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02B5C31E339BCF0062499B /* SyncBookDownloadWorker.swift */; };
+		9D19F1381E2E52ED00CFC005 /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F1371E2E52ED00CFC005 /* ServiceBase.swift */; };
+		9D44F8101E2F204D00993E2D /* CollectionTitleCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44F80F1E2F204D00993E2D /* CollectionTitleCellStyle.swift */; };
+		9D44F8131E2F231800993E2D /* DynamicHeightCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44F8111E2F231800993E2D /* DynamicHeightCollectionLayout.swift */; };
+		9D44F81A1E2F2AC100993E2D /* CollectionViewCellRoundBorderShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44F8191E2F2AC100993E2D /* CollectionViewCellRoundBorderShadow.swift */; };
+		9D44F81C1E2F61A000993E2D /* ColumnCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44F81B1E2F61A000993E2D /* ColumnCollectionLayout.swift */; };
+		9D4D80F41E2FB14400F017BD /* TableProgressCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4D80F31E2FB14400F017BD /* TableProgressCellStyle.swift */; };
+		9D5FE6351E34ABDE00C93129 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FE6341E34ABDE00C93129 /* DownloadService.swift */; };
+		9D5FE6371E3619FF00C93129 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FE6361E3619FF00C93129 /* QueryService.swift */; };
+		9D80EA051E20338F00172E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80EA041E20338F00172E11 /* AppDelegate.swift */; };
+		9D80EA0A1E20338F00172E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D80EA081E20338F00172E11 /* Main.storyboard */; };
+		9D80EA0F1E20338F00172E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D80EA0E1E20338F00172E11 /* Assets.xcassets */; };
+		9D80EA121E20338F00172E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D80EA101E20338F00172E11 /* LaunchScreen.storyboard */; };
+		9D80EA1D1E20339000172E11 /* TheEhenToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80EA1C1E20339000172E11 /* TheEhenToolUITests.swift */; };
+		9D958D751E36E29D00232876 /* TableProgressCellStyle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D958D741E36E29D00232876 /* TableProgressCellStyle.xib */; };
+		9D958D771E37011A00232876 /* SearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D958D761E37011A00232876 /* SearchInputView.xib */; };
+		9DA5D8EA1E3A0265002401C4 /* UIView+ShowActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA5D8E91E3A0265002401C4 /* UIView+ShowActivityIndicator.swift */; };
+		9DBF9FD61E361CAE00ED7229 /* TheEhenTool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF9FD21E361CAE00ED7229 /* TheEhenTool.xcdatamodeld */; };
+		9DBF9FD71E361CAE00ED7229 /* TheEhenToolCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF9FD41E361CAE00ED7229 /* TheEhenToolCache.xcdatamodeld */; };
+		9DBF9FD91E361D6100ED7229 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF9FD81E361D6100ED7229 /* SearchService.swift */; };
+		9DBF9FDB1E36257400ED7229 /* CollectionToggleTitleCellStyle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF9FDA1E36257400ED7229 /* CollectionToggleTitleCellStyle.xib */; };
+		9DBF9FDD1E36260000ED7229 /* CollectionToggleTitleCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF9FDC1E36260000ED7229 /* CollectionToggleTitleCellStyle.swift */; };
+		9DBF9FE71E364A1D00ED7229 /* CollectionTitleCellStyle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF9FE61E364A1D00ED7229 /* CollectionTitleCellStyle.xib */; };
+		9DE5ECD91E371891009CDE5E /* SearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5ECD81E371891009CDE5E /* SearchInputView.swift */; };
+		9DE5ECDB1E3742E8009CDE5E /* UIView+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5ECDA1E3742E8009CDE5E /* UIView+fromNib.swift */; };
+		9DE5ECDF1E37797D009CDE5E /* MultiSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE5ECDE1E37797D009CDE5E /* MultiSelectionView.xib */; };
+		9DE5ECE11E377991009CDE5E /* MultiSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5ECE01E377991009CDE5E /* MultiSelectionView.swift */; };
+		9DE5ECE31E378BD9009CDE5E /* ToggleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE5ECE21E378BD9009CDE5E /* ToggleButton.xib */; };
+		9DE5ECE51E378C5D009CDE5E /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5ECE41E378C5D009CDE5E /* ToggleButton.swift */; };
+		9DF598C51E2BA63700479767 /* PreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598C01E2BA63700479767 /* PreviewService.swift */; };
+		9DF598C91E2BA63700479767 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598C41E2BA63700479767 /* PreviewViewController.swift */; };
+		9DF598D71E2BD80100479767 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598D61E2BD80100479767 /* BookViewController.swift */; };
+		9DF598DB1E2BE14C00479767 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598DA1E2BE14C00479767 /* DownloadViewController.swift */; };
+		9DF598E11E2CA45A00479767 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598E01E2CA45A00479767 /* SearchViewController.swift */; };
+		9DF598E41E2CA53E00479767 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF598E31E2CA53E00479767 /* PlayViewController.swift */; };
+		9DF5990F1E2DB8C200479767 /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5990C1E2DB8C200479767 /* ConfigurationHelper.swift */; };
+		9DF599101E2DB8C200479767 /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5990D1E2DB8C200479767 /* UIImageHelper.swift */; };
+		9DF599111E2DB8C200479767 /* XPathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5990E1E2DB8C200479767 /* XPathParser.swift */; };
+		9DF5992F1E2DBFD500479767 /* TheEhenToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5992E1E2DBFD500479767 /* TheEhenToolTests.swift */; };
+		9DF599371E2DBFEB00479767 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF599361E2DBFEB00479767 /* ParserTests.swift */; };
+		9DF599391E2DBFF800479767 /* XPathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5990E1E2DB8C200479767 /* XPathParser.swift */; };
+		9DF5993B1E2DC99C00479767 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5993A1E2DC99C00479767 /* BookService.swift */; };
+		9DF5993D1E2DCD1900479767 /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5990C1E2DB8C200479767 /* ConfigurationHelper.swift */; };
+		9DF599421E2E1F9C00479767 /* TempTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF599411E2E1F9C00479767 /* TempTests.swift */; };
+		A9383F48EB0AB83CB91B6996 /* Pods_TheEhenToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B3948ADA16C3BBE6E8B38C /* Pods_TheEhenToolTests.framework */; };
+		FB5FB9F53F14F0C69604C871 /* Pods_TheEhenTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657E8CEC2158503CCF9CAE2B /* Pods_TheEhenTool.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D80EA191E20339000172E11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D80E9F91E20338F00172E11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D80EA001E20338F00172E11;
+			remoteInfo = TheEhenTool;
+		};
+		9DF599311E2DBFD500479767 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D80E9F91E20338F00172E11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D80EA001E20338F00172E11;
+			remoteInfo = TheEhenTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		088DF8ADEF105891179F18C0 /* Pods-TheEhenToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenToolTests/Pods-TheEhenToolTests.release.xcconfig"; sourceTree = "<group>"; };
+		0D4B17AB1F6D877A37756F33 /* Pods_TheEhenToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheEhenToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		657E8CEC2158503CCF9CAE2B /* Pods_TheEhenTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheEhenTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B3948ADA16C3BBE6E8B38C /* Pods_TheEhenToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheEhenToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D02B5BC1E317AF40062499B /* SyncronizedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncronizedArray.swift; path = TheEhenTool/src/Common/Helpers/SyncronizedArray.swift; sourceTree = SOURCE_ROOT; };
+		9D02B5C11E33303B0062499B /* Mutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mutex.swift; path = TheEhenTool/src/Common/Helpers/Mutex.swift; sourceTree = SOURCE_ROOT; };
+		9D02B5C31E339BCF0062499B /* SyncBookDownloadWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncBookDownloadWorker.swift; path = src/Download/SyncBookDownloadWorker.swift; sourceTree = "<group>"; };
+		9D19F1371E2E52ED00CFC005 /* ServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceBase.swift; path = src/Common/ServiceBase.swift; sourceTree = "<group>"; };
+		9D44F80F1E2F204D00993E2D /* CollectionTitleCellStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionTitleCellStyle.swift; path = src/Common/Views/CollectionTitleCellStyle.swift; sourceTree = "<group>"; };
+		9D44F8111E2F231800993E2D /* DynamicHeightCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicHeightCollectionLayout.swift; path = src/Common/Views/DynamicHeightCollectionLayout.swift; sourceTree = "<group>"; };
+		9D44F8191E2F2AC100993E2D /* CollectionViewCellRoundBorderShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCellRoundBorderShadow.swift; path = src/Common/Views/CollectionViewCellRoundBorderShadow.swift; sourceTree = "<group>"; };
+		9D44F81B1E2F61A000993E2D /* ColumnCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColumnCollectionLayout.swift; path = src/Common/Views/ColumnCollectionLayout.swift; sourceTree = "<group>"; };
+		9D4D80F31E2FB14400F017BD /* TableProgressCellStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableProgressCellStyle.swift; path = src/Common/Views/TableProgressCellStyle.swift; sourceTree = "<group>"; };
+		9D5FE6341E34ABDE00C93129 /* DownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadService.swift; path = src/Download/DownloadService.swift; sourceTree = "<group>"; };
+		9D5FE6361E3619FF00C93129 /* QueryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryService.swift; path = src/Common/QueryService.swift; sourceTree = "<group>"; };
+		9D80EA011E20338F00172E11 /* TheEhenTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEhenTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D80EA041E20338F00172E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = src/Common/AppDelegate.swift; sourceTree = "<group>"; };
+		9D80EA091E20338F00172E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D80EA0E1E20338F00172E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D80EA111E20338F00172E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D80EA131E20338F00172E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D80EA181E20339000172E11 /* TheEhenToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheEhenToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D80EA1C1E20339000172E11 /* TheEhenToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheEhenToolUITests.swift; sourceTree = "<group>"; };
+		9D80EA1E1E20339000172E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D958D741E36E29D00232876 /* TableProgressCellStyle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableProgressCellStyle.xib; path = src/Common/Views/TableProgressCellStyle.xib; sourceTree = "<group>"; };
+		9D958D761E37011A00232876 /* SearchInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchInputView.xib; sourceTree = "<group>"; };
+		9DA5D8E91E3A0265002401C4 /* UIView+ShowActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+ShowActivityIndicator.swift"; path = "src/Common/Extensions/UIView+ShowActivityIndicator.swift"; sourceTree = "<group>"; };
+		9DBF9FD31E361CAE00ED7229 /* TheEhenTool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheEhenTool.xcdatamodel; sourceTree = "<group>"; };
+		9DBF9FD51E361CAE00ED7229 /* TheEhenToolCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheEhenToolCache.xcdatamodel; sourceTree = "<group>"; };
+		9DBF9FD81E361D6100ED7229 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchService.swift; path = src/Search/SearchService.swift; sourceTree = "<group>"; };
+		9DBF9FDA1E36257400ED7229 /* CollectionToggleTitleCellStyle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionToggleTitleCellStyle.xib; path = src/Common/Views/CollectionToggleTitleCellStyle.xib; sourceTree = "<group>"; };
+		9DBF9FDC1E36260000ED7229 /* CollectionToggleTitleCellStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionToggleTitleCellStyle.swift; sourceTree = "<group>"; };
+		9DBF9FE61E364A1D00ED7229 /* CollectionTitleCellStyle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionTitleCellStyle.xib; path = src/Common/Views/CollectionTitleCellStyle.xib; sourceTree = "<group>"; };
+		9DE5ECD81E371891009CDE5E /* SearchInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchInputView.swift; path = src/Common/Views/SearchInputView.swift; sourceTree = "<group>"; };
+		9DE5ECDA1E3742E8009CDE5E /* UIView+fromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+fromNib.swift"; path = "src/Common/Extensions/UIView+fromNib.swift"; sourceTree = "<group>"; };
+		9DE5ECDE1E37797D009CDE5E /* MultiSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultiSelectionView.xib; path = src/Common/Views/MultiSelectionView.xib; sourceTree = "<group>"; };
+		9DE5ECE01E377991009CDE5E /* MultiSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiSelectionView.swift; path = src/Common/Views/MultiSelectionView.swift; sourceTree = "<group>"; };
+		9DE5ECE21E378BD9009CDE5E /* ToggleButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToggleButton.xib; path = src/Common/Views/ToggleButton.xib; sourceTree = "<group>"; };
+		9DE5ECE41E378C5D009CDE5E /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToggleButton.swift; path = src/Common/Views/ToggleButton.swift; sourceTree = "<group>"; };
+		9DF598C01E2BA63700479767 /* PreviewService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewService.swift; path = src/Preview/PreviewService.swift; sourceTree = "<group>"; };
+		9DF598C41E2BA63700479767 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = src/Preview/PreviewViewController.swift; sourceTree = "<group>"; };
+		9DF598D61E2BD80100479767 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookViewController.swift; path = src/Book/BookViewController.swift; sourceTree = "<group>"; };
+		9DF598DA1E2BE14C00479767 /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadViewController.swift; path = src/Download/DownloadViewController.swift; sourceTree = "<group>"; };
+		9DF598E01E2CA45A00479767 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = src/Search/SearchViewController.swift; sourceTree = "<group>"; };
+		9DF598E31E2CA53E00479767 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayViewController.swift; path = src/Play/PlayViewController.swift; sourceTree = "<group>"; };
+		9DF5990C1E2DB8C200479767 /* ConfigurationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationHelper.swift; path = TheEhenTool/src/Common/Helpers/ConfigurationHelper.swift; sourceTree = SOURCE_ROOT; };
+		9DF5990D1E2DB8C200479767 /* UIImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageHelper.swift; path = TheEhenTool/src/Common/Helpers/UIImageHelper.swift; sourceTree = SOURCE_ROOT; };
+		9DF5990E1E2DB8C200479767 /* XPathParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XPathParser.swift; path = TheEhenTool/src/Common/Helpers/XPathParser.swift; sourceTree = SOURCE_ROOT; };
+		9DF5992C1E2DBFD500479767 /* TheEhenToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheEhenToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DF5992E1E2DBFD500479767 /* TheEhenToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheEhenToolTests.swift; sourceTree = "<group>"; };
+		9DF599361E2DBFEB00479767 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		9DF5993A1E2DC99C00479767 /* BookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookService.swift; path = src/Book/BookService.swift; sourceTree = "<group>"; };
+		9DF599411E2E1F9C00479767 /* TempTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTests.swift; sourceTree = "<group>"; };
+		A277B0A7AFE71A9AD14E05CF /* Pods-TheEhenTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenTool/Pods-TheEhenTool.debug.xcconfig"; sourceTree = "<group>"; };
+		B0630019F82E0F2489B77735 /* Pods-TheEhenToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenToolUITests/Pods-TheEhenToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C75A665F5CE64597E4848147 /* Pods-TheEhenToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenToolUITests/Pods-TheEhenToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2B4DDC6725CE259C3D69605 /* Pods-TheEhenTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenTool/Pods-TheEhenTool.release.xcconfig"; sourceTree = "<group>"; };
+		ED659C6FD291BF4C6BA888AE /* Pods-TheEhenToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheEhenToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheEhenToolTests/Pods-TheEhenToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D80E9FE1E20338F00172E11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5FB9F53F14F0C69604C871 /* Pods_TheEhenTool.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D80EA151E20339000172E11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				223588F6A88DEF69B6A7090F /* Pods_TheEhenToolUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DF599291E2DBFD500479767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9383F48EB0AB83CB91B6996 /* Pods_TheEhenToolTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B9B274483F83A34D896B50F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A277B0A7AFE71A9AD14E05CF /* Pods-TheEhenTool.debug.xcconfig */,
+				D2B4DDC6725CE259C3D69605 /* Pods-TheEhenTool.release.xcconfig */,
+				C75A665F5CE64597E4848147 /* Pods-TheEhenToolUITests.debug.xcconfig */,
+				B0630019F82E0F2489B77735 /* Pods-TheEhenToolUITests.release.xcconfig */,
+				ED659C6FD291BF4C6BA888AE /* Pods-TheEhenToolTests.debug.xcconfig */,
+				088DF8ADEF105891179F18C0 /* Pods-TheEhenToolTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3A5DA02EC54F3827F41994E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				657E8CEC2158503CCF9CAE2B /* Pods_TheEhenTool.framework */,
+				0D4B17AB1F6D877A37756F33 /* Pods_TheEhenToolUITests.framework */,
+				70B3948ADA16C3BBE6E8B38C /* Pods_TheEhenToolTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D44F8151E2F232300993E2D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D44F8111E2F231800993E2D /* DynamicHeightCollectionLayout.swift */,
+				9D44F81B1E2F61A000993E2D /* ColumnCollectionLayout.swift */,
+				9D44F8191E2F2AC100993E2D /* CollectionViewCellRoundBorderShadow.swift */,
+				9DBF9FDA1E36257400ED7229 /* CollectionToggleTitleCellStyle.xib */,
+				9DBF9FDC1E36260000ED7229 /* CollectionToggleTitleCellStyle.swift */,
+				9DBF9FE61E364A1D00ED7229 /* CollectionTitleCellStyle.xib */,
+				9D44F80F1E2F204D00993E2D /* CollectionTitleCellStyle.swift */,
+				9D958D741E36E29D00232876 /* TableProgressCellStyle.xib */,
+				9D4D80F31E2FB14400F017BD /* TableProgressCellStyle.swift */,
+				9D958D761E37011A00232876 /* SearchInputView.xib */,
+				9DE5ECD81E371891009CDE5E /* SearchInputView.swift */,
+				9DE5ECDE1E37797D009CDE5E /* MultiSelectionView.xib */,
+				9DE5ECE01E377991009CDE5E /* MultiSelectionView.swift */,
+				9DE5ECE21E378BD9009CDE5E /* ToggleButton.xib */,
+				9DE5ECE41E378C5D009CDE5E /* ToggleButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9D80E9F81E20338F00172E11 = {
+			isa = PBXGroup;
+			children = (
+				9D80EA031E20338F00172E11 /* TheEhenTool */,
+				9D80EA1B1E20339000172E11 /* TheEhenToolUITests */,
+				9DF5992D1E2DBFD500479767 /* TheEhenToolTests */,
+				9D80EA021E20338F00172E11 /* Products */,
+				2B9B274483F83A34D896B50F /* Pods */,
+				3A5DA02EC54F3827F41994E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D80EA021E20338F00172E11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D80EA011E20338F00172E11 /* TheEhenTool.app */,
+				9D80EA181E20339000172E11 /* TheEhenToolUITests.xctest */,
+				9DF5992C1E2DBFD500479767 /* TheEhenToolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D80EA031E20338F00172E11 /* TheEhenTool */ = {
+			isa = PBXGroup;
+			children = (
+				9DF598E91E2CA93A00479767 /* Common */,
+				9DF598BF1E2BA60600479767 /* Preview */,
+				9DF598D91E2BDD9500479767 /* Search */,
+				9DF598D51E2BD7B200479767 /* Book */,
+				9DF598D81E2BDD3D00479767 /* Download */,
+				9DF598E21E2CA51000479767 /* Play */,
+			);
+			path = TheEhenTool;
+			sourceTree = "<group>";
+		};
+		9D80EA1B1E20339000172E11 /* TheEhenToolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9D80EA1C1E20339000172E11 /* TheEhenToolUITests.swift */,
+				9D80EA1E1E20339000172E11 /* Info.plist */,
+			);
+			path = TheEhenToolUITests;
+			sourceTree = "<group>";
+		};
+		9D91F4171E20982400B8A678 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9D80EA081E20338F00172E11 /* Main.storyboard */,
+				9D80EA0E1E20338F00172E11 /* Assets.xcassets */,
+				9D80EA101E20338F00172E11 /* LaunchScreen.storyboard */,
+				9D80EA131E20338F00172E11 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9D91F4221E22681900B8A678 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9DBF9FD21E361CAE00ED7229 /* TheEhenTool.xcdatamodeld */,
+				9DBF9FD41E361CAE00ED7229 /* TheEhenToolCache.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		9DE5ECDC1E374714009CDE5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DE5ECDA1E3742E8009CDE5E /* UIView+fromNib.swift */,
+				9DA5D8E91E3A0265002401C4 /* UIView+ShowActivityIndicator.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9DF598BF1E2BA60600479767 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				9DF598C01E2BA63700479767 /* PreviewService.swift */,
+				9DF598C41E2BA63700479767 /* PreviewViewController.swift */,
+			);
+			name = Preview;
+			sourceTree = "<group>";
+		};
+		9DF598CA1E2BA69F00479767 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5990C1E2DB8C200479767 /* ConfigurationHelper.swift */,
+				9DF5990D1E2DB8C200479767 /* UIImageHelper.swift */,
+				9DF5990E1E2DB8C200479767 /* XPathParser.swift */,
+				9D02B5BC1E317AF40062499B /* SyncronizedArray.swift */,
+				9D02B5C11E33303B0062499B /* Mutex.swift */,
+			);
+			name = Helpers;
+			path = src/Helpers;
+			sourceTree = "<group>";
+		};
+		9DF598D51E2BD7B200479767 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5993A1E2DC99C00479767 /* BookService.swift */,
+				9DF598D61E2BD80100479767 /* BookViewController.swift */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		9DF598D81E2BDD3D00479767 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				9D02B5C31E339BCF0062499B /* SyncBookDownloadWorker.swift */,
+				9D5FE6341E34ABDE00C93129 /* DownloadService.swift */,
+				9DF598DA1E2BE14C00479767 /* DownloadViewController.swift */,
+			);
+			name = Download;
+			sourceTree = "<group>";
+		};
+		9DF598D91E2BDD9500479767 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				9DBF9FD81E361D6100ED7229 /* SearchService.swift */,
+				9DF598E01E2CA45A00479767 /* SearchViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		9DF598E21E2CA51000479767 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				9DF598E31E2CA53E00479767 /* PlayViewController.swift */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
+		9DF598E91E2CA93A00479767 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9D80EA041E20338F00172E11 /* AppDelegate.swift */,
+				9D19F1371E2E52ED00CFC005 /* ServiceBase.swift */,
+				9D5FE6361E3619FF00C93129 /* QueryService.swift */,
+				9D44F8151E2F232300993E2D /* Views */,
+				9DE5ECDC1E374714009CDE5E /* Extensions */,
+				9D91F4221E22681900B8A678 /* CoreData */,
+				9DF598CA1E2BA69F00479767 /* Helpers */,
+				9D91F4171E20982400B8A678 /* Resources */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		9DF5992D1E2DBFD500479767 /* TheEhenToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DF5992E1E2DBFD500479767 /* TheEhenToolTests.swift */,
+				9DF599361E2DBFEB00479767 /* ParserTests.swift */,
+				9DF599411E2E1F9C00479767 /* TempTests.swift */,
+			);
+			path = TheEhenToolTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D80EA001E20338F00172E11 /* TheEhenTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D80EA211E20339000172E11 /* Build configuration list for PBXNativeTarget "TheEhenTool" */;
+			buildPhases = (
+				20C21458AA23380ADC09C0A7 /* [CP] Check Pods Manifest.lock */,
+				9D80E9FD1E20338F00172E11 /* Sources */,
+				9D80E9FE1E20338F00172E11 /* Frameworks */,
+				9D80E9FF1E20338F00172E11 /* Resources */,
+				3AB9871FF91BE25B903028D1 /* [CP] Embed Pods Frameworks */,
+				55733421275E51B3C8F63083 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheEhenTool;
+			productName = TheEhenTool;
+			productReference = 9D80EA011E20338F00172E11 /* TheEhenTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D80EA171E20339000172E11 /* TheEhenToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D80EA241E20339000172E11 /* Build configuration list for PBXNativeTarget "TheEhenToolUITests" */;
+			buildPhases = (
+				2023DD78F9CA8AB0B2B8D82C /* [CP] Check Pods Manifest.lock */,
+				9D80EA141E20339000172E11 /* Sources */,
+				9D80EA151E20339000172E11 /* Frameworks */,
+				9D80EA161E20339000172E11 /* Resources */,
+				E8AB40570EAA9939D4568E5F /* [CP] Embed Pods Frameworks */,
+				A6FE6D58B22030ECC40E828A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D80EA1A1E20339000172E11 /* PBXTargetDependency */,
+			);
+			name = TheEhenToolUITests;
+			productName = TheEhenToolUITests;
+			productReference = 9D80EA181E20339000172E11 /* TheEhenToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9DF5992B1E2DBFD500479767 /* TheEhenToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DF599331E2DBFD500479767 /* Build configuration list for PBXNativeTarget "TheEhenToolTests" */;
+			buildPhases = (
+				33F8615967E258F1C4E3FB42 /* [CP] Check Pods Manifest.lock */,
+				9DF599281E2DBFD500479767 /* Sources */,
+				9DF599291E2DBFD500479767 /* Frameworks */,
+				9DF5992A1E2DBFD500479767 /* Resources */,
+				40F6181A9F33965BD75F2DA3 /* [CP] Embed Pods Frameworks */,
+				043F8EC26F2EA1AB70652840 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DF599321E2DBFD500479767 /* PBXTargetDependency */,
+			);
+			name = TheEhenToolTests;
+			productName = TheEhenToolTests;
+			productReference = 9DF5992C1E2DBFD500479767 /* TheEhenToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D80E9F91E20338F00172E11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = acrew;
+				TargetAttributes = {
+					9D80EA001E20338F00172E11 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D568S47ZRM;
+						ProvisioningStyle = Automatic;
+					};
+					9D80EA171E20339000172E11 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D568S47ZRM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D80EA001E20338F00172E11;
+					};
+					9DF5992B1E2DBFD500479767 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D568S47ZRM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D80EA001E20338F00172E11;
+					};
+				};
+			};
+			buildConfigurationList = 9D80E9FC1E20338F00172E11 /* Build configuration list for PBXProject "TheEhenTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D80E9F81E20338F00172E11;
+			productRefGroup = 9D80EA021E20338F00172E11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D80EA001E20338F00172E11 /* TheEhenTool */,
+				9D80EA171E20339000172E11 /* TheEhenToolUITests */,
+				9DF5992B1E2DBFD500479767 /* TheEhenToolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D80E9FF1E20338F00172E11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D958D771E37011A00232876 /* SearchInputView.xib in Resources */,
+				9DBF9FDB1E36257400ED7229 /* CollectionToggleTitleCellStyle.xib in Resources */,
+				9D80EA121E20338F00172E11 /* LaunchScreen.storyboard in Resources */,
+				9DE5ECDF1E37797D009CDE5E /* MultiSelectionView.xib in Resources */,
+				9D80EA0F1E20338F00172E11 /* Assets.xcassets in Resources */,
+				9DBF9FE71E364A1D00ED7229 /* CollectionTitleCellStyle.xib in Resources */,
+				9D80EA0A1E20338F00172E11 /* Main.storyboard in Resources */,
+				9D958D751E36E29D00232876 /* TableProgressCellStyle.xib in Resources */,
+				9DE5ECE31E378BD9009CDE5E /* ToggleButton.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D80EA161E20339000172E11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DF5992A1E2DBFD500479767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		043F8EC26F2EA1AB70652840 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenToolTests/Pods-TheEhenToolTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2023DD78F9CA8AB0B2B8D82C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		20C21458AA23380ADC09C0A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		33F8615967E258F1C4E3FB42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3AB9871FF91BE25B903028D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenTool/Pods-TheEhenTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40F6181A9F33965BD75F2DA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenToolTests/Pods-TheEhenToolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55733421275E51B3C8F63083 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenTool/Pods-TheEhenTool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6FE6D58B22030ECC40E828A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenToolUITests/Pods-TheEhenToolUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8AB40570EAA9939D4568E5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheEhenToolUITests/Pods-TheEhenToolUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D80E9FD1E20338F00172E11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DF5993B1E2DC99C00479767 /* BookService.swift in Sources */,
+				9DA5D8EA1E3A0265002401C4 /* UIView+ShowActivityIndicator.swift in Sources */,
+				9DE5ECE51E378C5D009CDE5E /* ToggleButton.swift in Sources */,
+				9DF598E41E2CA53E00479767 /* PlayViewController.swift in Sources */,
+				9DF599101E2DB8C200479767 /* UIImageHelper.swift in Sources */,
+				9DF598D71E2BD80100479767 /* BookViewController.swift in Sources */,
+				9D44F81C1E2F61A000993E2D /* ColumnCollectionLayout.swift in Sources */,
+				9DF598C51E2BA63700479767 /* PreviewService.swift in Sources */,
+				9DE5ECE11E377991009CDE5E /* MultiSelectionView.swift in Sources */,
+				9D19F1381E2E52ED00CFC005 /* ServiceBase.swift in Sources */,
+				9DBF9FDD1E36260000ED7229 /* CollectionToggleTitleCellStyle.swift in Sources */,
+				9D02B5C21E33303B0062499B /* Mutex.swift in Sources */,
+				9DF5990F1E2DB8C200479767 /* ConfigurationHelper.swift in Sources */,
+				9DF598E11E2CA45A00479767 /* SearchViewController.swift in Sources */,
+				9D5FE6371E3619FF00C93129 /* QueryService.swift in Sources */,
+				9D44F8101E2F204D00993E2D /* CollectionTitleCellStyle.swift in Sources */,
+				9D02B5C41E339BCF0062499B /* SyncBookDownloadWorker.swift in Sources */,
+				9DE5ECD91E371891009CDE5E /* SearchInputView.swift in Sources */,
+				9D5FE6351E34ABDE00C93129 /* DownloadService.swift in Sources */,
+				9DBF9FD61E361CAE00ED7229 /* TheEhenTool.xcdatamodeld in Sources */,
+				9D44F8131E2F231800993E2D /* DynamicHeightCollectionLayout.swift in Sources */,
+				9D44F81A1E2F2AC100993E2D /* CollectionViewCellRoundBorderShadow.swift in Sources */,
+				9DF598DB1E2BE14C00479767 /* DownloadViewController.swift in Sources */,
+				9DF598C91E2BA63700479767 /* PreviewViewController.swift in Sources */,
+				9D4D80F41E2FB14400F017BD /* TableProgressCellStyle.swift in Sources */,
+				9DF599111E2DB8C200479767 /* XPathParser.swift in Sources */,
+				9DBF9FD71E361CAE00ED7229 /* TheEhenToolCache.xcdatamodeld in Sources */,
+				9DE5ECDB1E3742E8009CDE5E /* UIView+fromNib.swift in Sources */,
+				9DBF9FD91E361D6100ED7229 /* SearchService.swift in Sources */,
+				9D80EA051E20338F00172E11 /* AppDelegate.swift in Sources */,
+				9D02B5BD1E317AF40062499B /* SyncronizedArray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D80EA141E20339000172E11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D80EA1D1E20339000172E11 /* TheEhenToolUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DF599281E2DBFD500479767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D02B5BE1E32156F0062499B /* AppDelegate.swift in Sources */,
+				9DF5992F1E2DBFD500479767 /* TheEhenToolTests.swift in Sources */,
+				9DF599391E2DBFF800479767 /* XPathParser.swift in Sources */,
+				9DF599371E2DBFEB00479767 /* ParserTests.swift in Sources */,
+				9DF5993D1E2DCD1900479767 /* ConfigurationHelper.swift in Sources */,
+				9DF599421E2E1F9C00479767 /* TempTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D80EA1A1E20339000172E11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D80EA001E20338F00172E11 /* TheEhenTool */;
+			targetProxy = 9D80EA191E20339000172E11 /* PBXContainerItemProxy */;
+		};
+		9DF599321E2DBFD500479767 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D80EA001E20338F00172E11 /* TheEhenTool */;
+			targetProxy = 9DF599311E2DBFD500479767 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D80EA081E20338F00172E11 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D80EA091E20338F00172E11 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D80EA101E20338F00172E11 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D80EA111E20338F00172E11 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D80EA1F1E20339000172E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D80EA201E20339000172E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D80EA221E20339000172E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A277B0A7AFE71A9AD14E05CF /* Pods-TheEhenTool.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9D80EA231E20339000172E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2B4DDC6725CE259C3D69605 /* Pods-TheEhenTool.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9D80EA251E20339000172E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C75A665F5CE64597E4848147 /* Pods-TheEhenToolUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TheEhenTool;
+			};
+			name = Debug;
+		};
+		9D80EA261E20339000172E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0630019F82E0F2489B77735 /* Pods-TheEhenToolUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TheEhenTool;
+			};
+			name = Release;
+		};
+		9DF599341E2DBFD500479767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED659C6FD291BF4C6BA888AE /* Pods-TheEhenToolTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheEhenTool.app/TheEhenTool";
+			};
+			name = Debug;
+		};
+		9DF599351E2DBFD500479767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 088DF8ADEF105891179F18C0 /* Pods-TheEhenToolTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = D568S47ZRM;
+				INFOPLIST_FILE = TheEhenToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acrew.TheEhenToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheEhenTool.app/TheEhenTool";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D80E9FC1E20338F00172E11 /* Build configuration list for PBXProject "TheEhenTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D80EA1F1E20339000172E11 /* Debug */,
+				9D80EA201E20339000172E11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D80EA211E20339000172E11 /* Build configuration list for PBXNativeTarget "TheEhenTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D80EA221E20339000172E11 /* Debug */,
+				9D80EA231E20339000172E11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D80EA241E20339000172E11 /* Build configuration list for PBXNativeTarget "TheEhenToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D80EA251E20339000172E11 /* Debug */,
+				9D80EA261E20339000172E11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DF599331E2DBFD500479767 /* Build configuration list for PBXNativeTarget "TheEhenToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DF599341E2DBFD500479767 /* Debug */,
+				9DF599351E2DBFD500479767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9DBF9FD21E361CAE00ED7229 /* TheEhenTool.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9DBF9FD31E361CAE00ED7229 /* TheEhenTool.xcdatamodel */,
+			);
+			currentVersion = 9DBF9FD31E361CAE00ED7229 /* TheEhenTool.xcdatamodel */;
+			name = TheEhenTool.xcdatamodeld;
+			path = src/Common/CoreData/TheEhenTool.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9DBF9FD41E361CAE00ED7229 /* TheEhenToolCache.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9DBF9FD51E361CAE00ED7229 /* TheEhenToolCache.xcdatamodel */,
+			);
+			currentVersion = 9DBF9FD51E361CAE00ED7229 /* TheEhenToolCache.xcdatamodel */;
+			name = TheEhenToolCache.xcdatamodeld;
+			path = src/Common/CoreData/TheEhenToolCache.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9D80E9F91E20338F00172E11 /* Project object */;
+}
