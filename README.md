@@ -8,3 +8,10 @@ More information will come in a few days
 Sample screen shot
 
 <img src="sample.png" alt="Sample Image" width="400">
+
+TODO
+--------------------------------------------------------------------------------------------------
+- [ ] Add icons
+- [ ] Add backgrounds
+- [ ] Improve image viewer
+- [ ] Add more notifications
