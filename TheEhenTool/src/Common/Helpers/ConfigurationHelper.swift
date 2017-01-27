@@ -74,7 +74,7 @@ class SearchConfiguration {
         for optionIndex in 0..<optionList.count {
             let keyString = "f_" + optionList[optionIndex].rawValue.lowercased().replacingOccurrences(of: "_", with: "-")
             optionsString.append(keyString + "=")
-            self.toggleFilterSettings[optionList[optionIndex]] ?? false ? optionsString.append("1") : optionsString.append("0")
+            self.toggleFilterSettings[optionList[optionIndex]] ?? true ? optionsString.append("1") : optionsString.append("0")
             optionIndex != optionList.count - 1 ? optionsString.append("&") : ()
         }
         
@@ -98,6 +98,7 @@ class ConfigurationHelper: SearchConfiguration{
     let bookPageNumberRegEx = "^(\\d*) pages$"
     let bookIdRegEx = "^http[s]*:\\/\\/.*\\/g\\/(\\d*)\\/.*\\/$"
     let bookThumbXPath = "//*[@id=\"gd1\"]/img/@src"
+    let bookSectionNumberXPath = "/html/body/div[3]/table/tr/td[position() = (last()-1)]"
     
     let pageListXPath = "//*[@id=\"gdt\"]/div"
     let pageHrefXPath = "div/a/@href"

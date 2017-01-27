@@ -165,7 +165,7 @@ extension BookViewController: CollectionTitleCellDelegate {
         
         let alertVC = UIAlertController(title: "Deleting Book", message: "Do you really want to delete me SenPai? QAQ", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Delete", style: .default) { action in
-            BookService.sharedBookService.PromiseToDeleteBook(WithId: bookInfoEntity.bookId)
+            BookService.sharedBookService.PromiseToRemoveBook(WithId: bookInfoEntity.bookId)
             .catch { error in print("BookViewService.RemoveInvoked: \(error)") }
         })
         
@@ -176,10 +176,6 @@ extension BookViewController: CollectionTitleCellDelegate {
     func ViewInvoked(ForCell cell: UICollectionViewCell) {
         guard let indexPath = self.bookCollectionView.indexPath(for: cell) else { print("No book cell found"); return }
         guard let bookInfoEntity = self.bookResultsController.fetchedObjects?[indexPath.item] else { return }
-        guard let playVC = PlayViewController.InitFromStoryboard(WithName: "Main", Identifier: "PlayViewController") else { print("BookViewController.ViewInvoked: Error initiating playViewController"); return }
-        playVC.modalPresentationStyle = .fullScreen
-        playVC.modalTransitionStyle = .coverVertical
-        playVC.id = bookInfoEntity.bookId
-        self.present(playVC, animated: true)
+        PlayViewController.Show(InParentViewController: self, BookId: bookInfoEntity.bookId)
     }
 }

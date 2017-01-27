@@ -143,6 +143,7 @@ class XPathParser: NSObject {
                     }
 
                     //Save each property in config
+                    //TODO: Move the convertion to parsing block
                     for (propName, propConfig) in self.ParseConfig {
                         guard let propValue = entry[propName] else { reject(ParseError.InvalidParseItemName); return }
                         if let unwrappedValue = propValue {

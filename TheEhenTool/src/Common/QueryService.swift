@@ -26,6 +26,8 @@ class QueryService: ServiceBase, XPathParserDelegate {
     
     init(
         DefaultEntityName entityName: String,
+//        DefaultContainer container: NSPersistentContainer = (UIApplication.shared.delegate as! AppDelegate).cacheContainer,
+        DefaultContext context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).cacheContainer.newBackgroundContext(),
         config: ConfigurationHelper = ConfigurationHelper.shared
     ) {
         //        typealias ParseItemConfig = (
@@ -43,9 +45,9 @@ class QueryService: ServiceBase, XPathParserDelegate {
         parseConfig["thumbURL"] = (Source: self.config.previewThumbXPath, SourceType: .XPath, SourceModifier: nil, ConversionType:.String, DefaultValue: nil, IsUpdateMatcher: nil)
         parseConfig["id"] = (Source: self.config.previewIdXPath, SourceType: .XPath, SourceModifier: self.config.previewIdRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
         parseConfig["thumbImageData"] = (Source: self.config.previewThumbXPath, SourceType: .XPath, SourceModifier: nil, ConversionType:.URLToDownloadData, DefaultValue: nil, IsUpdateMatcher: nil)
-        let appDele = UIApplication.shared.delegate as! AppDelegate
         super.init(
-            DefaultContainer: appDele.cacheContainer,
+//            DefaultContainer: container,
+            DefaultContext:  context,
             DefaultEntityName: entityName,
             DefaultListXPath: self.config.previewListXPath,
             DefaultQueryURLString: nil,

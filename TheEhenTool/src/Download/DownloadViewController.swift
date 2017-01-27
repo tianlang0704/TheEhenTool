@@ -138,7 +138,7 @@ extension DownloadViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let bookInfoEntity = downloadResultsController.fetchedObjects?[indexPath.item] else { return }
         if bookInfoEntity.isBookDownloading {
-            let _ = DownloadService.sharedDownloadService.StopDownloading(ForId: bookInfoEntity.bookId)
+            DownloadService.sharedDownloadService.StopDownloading(ForId: bookInfoEntity.bookId)
         }else{
             DownloadService.sharedDownloadService.PromiseToDownloadPages(ForId: bookInfoEntity.bookId)
             .catch{error in print("DownloadViewController.tableViewDidSelect: \(error)")}

@@ -23,11 +23,13 @@ class SyncBookDownloadWorker {
     private var moc: NSManagedObjectContext
     private var dataEntityName: String
     private var dataKey: String
+    private var downloadService: DownloadService
     var currentRequest: DataRequest? = nil
     var workItem: DispatchWorkItem? = nil
     private var stop = false
     
     init(
+        downloadService: DownloadService,
         bookId: Int32,
         moc: NSManagedObjectContext,
         dataEntityName: String,
@@ -37,6 +39,7 @@ class SyncBookDownloadWorker {
         self.moc = moc
         self.dataEntityName = dataEntityName
         self.dataKey = dataKey
+        self.downloadService = downloadService
     }
     
     func PromiseToStartWorker() -> Promise<Int32> {
@@ -47,7 +50,7 @@ class SyncBookDownloadWorker {
 //                attributes: DispatchQueue.Attributes.concurrent)
             self.workItem = DispatchWorkItem {
                 self.stop = false
-                let downloadList = DownloadService.sharedDownloadService.GetPageList(
+                let downloadList = self.downloadService.GetPageList(
                     ForBookId: self.bookId,
                     WithPredicate: "isBookPageDownloaded == NO")
                 let mutex = PThreadMutex()
@@ -67,6 +70,7 @@ class SyncBookDownloadWorker {
                     guard let validURL = url else { continue }
                     
                     mutex.unbalancedLock()
+                    //TODO: Maybe change it to XPathParser.PromiseToParseItem
                     Alamofire.request(validURL).responseString().then { html -> Promise<Data> in
                         let res = try XPathParser.ParseList(InHTML: html, ListXPath: "/", ItemConfig: downloadConfig)
                         guard res.count > 0 else { throw WorkerError.InvalidXPath }

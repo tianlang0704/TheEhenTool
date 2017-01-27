@@ -21,12 +21,17 @@ class BookService: ServiceBase, XPathParserDelegate {
         case ErrorBookIsUpdating
     }
     
-    typealias defaultEntity = BookInfoEntity
     
     let config = ConfigurationHelper.shared
     var updatingList = [String]()
+    lazy var defaultDownloadService: DownloadService = DownloadService.sharedDownloadService
     
-    init() {
+    init(
+//        DefaultContainer container: NSPersistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer,
+        DefaultContext context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.newBackgroundContext(),
+        DefaultEntityName entityName: String = "BookInfo",
+        DefaultDownloadService downloadService: DownloadService? = nil
+    ) {
         //        typealias ParseItemConfig = (
         //            Source: String?,
         //            SourceType: SourceType,
@@ -40,36 +45,46 @@ class BookService: ServiceBase, XPathParserDelegate {
         parseConfig["bookPageNumber"] = (Source: self.config.bookPageNumberXPath, SourceType: .XPath, SourceModifier: self.config.bookPageNumberRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
         parseConfig["bookThumbData"] = (Source: self.config.bookThumbXPath, SourceType: .XPath, SourceModifier: nil, ConversionType: .URLToDownloadData, DefaultValue: nil, IsUpdateMatcher: nil)
         
-        let appDele = UIApplication.shared.delegate as! AppDelegate
         super.init(
-            DefaultContainer: appDele.persistentContainer,
-            DefaultEntityName: defaultEntity.entity().name!,
+//            DefaultContainer: container,
+            DefaultContext: context,
+            DefaultEntityName: entityName,
             DefaultListXPath: "/",
             DefaultQueryURLString: nil,
             DefaultParseConfig: parseConfig
         )
+        
+        if let validServiceOverride = downloadService {
+            self.defaultDownloadService = validServiceOverride
+        }
+        
         self.parserDelegate = self
     }
     
-    func FetchData(WithBookURL urlString: String) throws {
-        guard let isBookExist = try? self.IsBookExistInEntity(BookURL: urlString), !isBookExist else { throw BookServiceError.ErrorBookAlreadyExist }
-        guard self.updatingList.index(of: urlString) == nil else { throw BookServiceError.ErrorBookIsUpdating }
-        self.updatingList.append(urlString)
-        
-        var parseConfig: [String: XPathParser.ParseItemConfig] = [:]
-        parseConfig["bookURL"] = (Source: urlString, SourceType: .String, SourceModifier: nil, ConversionType:.String, DefaultValue: nil, IsUpdateMatcher: nil)
-        parseConfig["bookId"] = (Source: urlString, SourceType: .String, SourceModifier: self.config.bookIdRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
-        
-        
-        super.PromiseToFetchData(WithAdditionalConfig: parseConfig, NewURL: urlString)
-        .then { moc, entries -> Void in
+    func PromiseToFetchData(WithBookURL urlString: String) -> Promise<Void> {
+        return Promise {fulfill, reject in
+            guard let isBookExist = try? self.IsBookExistInEntity(BookURL: urlString), !isBookExist else { throw BookServiceError.ErrorBookAlreadyExist }
+            guard self.updatingList.index(of: urlString) == nil else { throw BookServiceError.ErrorBookIsUpdating }
+            self.updatingList.append(urlString)
+            
+            var parseConfig: [String: XPathParser.ParseItemConfig] = [:]
+            parseConfig["bookURL"] = (Source: urlString, SourceType: .String, SourceModifier: nil, ConversionType:.String, DefaultValue: nil, IsUpdateMatcher: nil)
+            parseConfig["bookId"] = (Source: urlString, SourceType: .String, SourceModifier: self.config.bookIdRegEx, ConversionType:.Int32, DefaultValue: nil, IsUpdateMatcher: nil)
+            fulfill((parseConfig, urlString))
+        }.then { parseConfig, urlString in
+            return super.PromiseToFetchData(WithAdditionalConfig: parseConfig, NewURL: urlString)
+        }.then { moc, entries -> Void in
             guard entries.count > 0 else { return }
             var bookURL: String? = nil
             moc.performAndWait { bookURL = entries[0].value(forKey: "bookURL") as! String? }
             guard let validBookURL = bookURL else { return }
-            try? DownloadService.sharedDownloadService.FetchData(WithBookURL: validBookURL)
-            //TODO: need check and show message
-        }.always{
+            try self.defaultDownloadService.FetchData(WithBookURL: validBookURL)
+        }
+    }
+    
+    func FetchData(WithBookURL urlString: String) {
+        self.PromiseToFetchData(WithBookURL: urlString)
+        .always{
             guard let index = self.updatingList.index(of: urlString) else { return }
             self.updatingList.remove(at: index)
         }.catch{ error in
@@ -82,7 +97,7 @@ class BookService: ServiceBase, XPathParserDelegate {
     func UpdateBookInfo(ForId id: Int32, WithAttributes attributes: [String: Any]) {
         let moc = self.defaultMOC
         moc.performAndWait {
-            let req:NSFetchRequest = BookService.defaultEntity.fetchRequest()
+            let req: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: self.defaultEntityName)
             req.predicate = NSPredicate(format:"bookId == \(id)")
             guard let books = try? moc.fetch(req) else { print("UpdateInfo invalid id"); return }
             for book in books {
@@ -92,8 +107,8 @@ class BookService: ServiceBase, XPathParserDelegate {
         }
     }
     
-    func PromiseToDeleteBook(WithId id: Int32) -> Promise<Int32> {
-        return DownloadService.sharedDownloadService.PromiseToDeletePages(WithBookId: id)
+    func PromiseToRemoveBook(WithId id: Int32) -> Promise<Int32> {
+        return self.defaultDownloadService.PromiseToDeletePages(WithBookId: id)
         .then{ _ in
             Promise {fulfill, reject in
                 self.ClearEntity(WithPredicate: "bookId == \(id)")
@@ -102,20 +117,26 @@ class BookService: ServiceBase, XPathParserDelegate {
         }
     }
     
+    func RemoveBook(WithId id: Int32) {
+        self.PromiseToRemoveBook(WithId: id).catch{error in print("BookService: \(error)")}
+    }
+    
     func UpdateDownloadProgressForAll() {
         let moc = self.defaultMOC
         moc.perform {
-            let req:NSFetchRequest = BookService.defaultEntity.fetchRequest()
-            guard let downloadingBooks = try? moc.fetch(req) else { return }
+            let req: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: self.defaultEntityName)
+            guard let downloadingBooks = try? moc.fetch(req) else { print("BookService.UpdateDownloadProgressForAll: Failed fetching"); return }
             for book in downloadingBooks {
-                let downloadedPageNum = DownloadService.sharedDownloadService.CountPageNumberFor(ForBookId: book.bookId, WithPredicate: "isBookPageDownloaded == YES")
-                book.bookDownloadedPageNumber = Int32(downloadedPageNum)
-                book.bookDownloadProgress = Float(downloadedPageNum) / Float(book.bookPageNumber)
+                guard let bookId = book.value(forKey: "bookId") as? Int32 else { print("BookService.UpdateDownloadProgressForAll: invliad book id"); continue }
+                guard let bookPageNumber = book.value(forKey: "bookPageNumber") as? Int32 else { print("BookService.UpdateDownloadProgressForAll: invalid page number"); continue }
+                let downloadedPageNum = self.defaultDownloadService.CountPageNumberFor(ForBookId: bookId, WithPredicate: "isBookPageDownloaded == YES")
+                book.setValue(Int32(downloadedPageNum), forKey: "bookDownloadedPageNumber")
+                book.setValue(Float(downloadedPageNum) / Float(bookPageNumber), forKey: "bookDownloadProgress")
                 
-                let totalPageNumber = DownloadService.sharedDownloadService.CountPageNumberFor(ForBookId: book.bookId)
-                let leftPageNum = DownloadService.sharedDownloadService.CountPageNumberFor(ForBookId: book.bookId, WithPredicate: "isBookPageDownloaded == NO")
+                let totalPageNumber = self.defaultDownloadService.CountPageNumberFor(ForBookId: bookId)
+                let leftPageNum = self.defaultDownloadService.CountPageNumberFor(ForBookId: bookId, WithPredicate: "isBookPageDownloaded == NO")
                 if totalPageNumber > 0 && leftPageNum == 0 {
-                    book.isBookDownloadComplete = true
+                    book.setValue(true, forKey: "isBookDownloadComplete")
                 }
             }
             if moc.hasChanges { do { try moc.save() } catch let error { print("Update progress for all: \(error)") } }
@@ -130,7 +151,7 @@ class BookService: ServiceBase, XPathParserDelegate {
     func IsBookExistInEntity(BookId id: Int) throws -> Bool {
         let moc = self.defaultMOC
         var resultNum = 0
-        let req:NSFetchRequest = BookInfoEntity.fetchRequest()
+        let req: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: self.defaultEntityName)
         let pred = NSPredicate(format: "bookId == \(id)")
         req.predicate = pred
         moc.performAndWait { do { resultNum = try moc.count(for: req) } catch(let error) { print(error) } }

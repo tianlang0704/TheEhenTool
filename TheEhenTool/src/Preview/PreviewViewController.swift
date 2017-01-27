@@ -32,7 +32,7 @@ class PreviewViewController: UIViewController {
         self.InitializeCollectionView()
         self.InitializeFetchedResultsController()
         self.initializeService()
-        self.previewService.FetchData()
+        self.previewService.FetchData(WithSearchString: "", Page: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -244,13 +244,14 @@ extension PreviewViewController: CollectionToggleTitleCellDelegate {
         guard let validIndexPath = self.previewCollectionView.indexPath(for: cell) else { return }
         guard let validPreview = self.previewResultsController.fetchedObjects?[validIndexPath.item] else { return }
         guard let validBookURL = validPreview.hrefURL else { return }
-        do {
-            try BookService.sharedBookService.FetchData(WithBookURL: validBookURL)
-        } catch(let error) { print( error )}
+        BookService.sharedBookService.FetchData(WithBookURL: validBookURL)
     }
     
     func ToggleTitleCellRightButtonInvoked(ForCell cell: UICollectionViewCell) {
-        return
+        guard let indexPath = self.previewCollectionView.indexPath(for: cell) else { print("No book cell found"); return }
+        guard let previewBookInfo = self.previewResultsController.fetchedObjects?[indexPath.item] else { return }
+        guard let validURL = previewBookInfo.hrefURL else { return }
+        PlayViewController.ShowTemp(InParentViewController: self, BookURL: validURL, BookId: previewBookInfo.id)
     }
 }
 //End: QueryCellDelegate
@@ -279,7 +280,6 @@ extension PreviewViewController: SearchInputViewDelegate {
         if let validWorkItem = PreviewViewController.pendingCatagoryRefreshWorkItem {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: validWorkItem)
         }
-        
     }
     
     func SearchInputViewSearchInvoked(WithString string: String) { }

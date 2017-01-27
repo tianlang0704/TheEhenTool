@@ -16,7 +16,7 @@ class ServiceBase {
         case InvalidParseURL
     }
     
-    var defaultContainer: NSPersistentContainer
+//    var defaultContainer: NSPersistentContainer
     var defaultMOC: NSManagedObjectContext
     var defaultEntityName: String
     var defaultListXPath: String
@@ -26,14 +26,16 @@ class ServiceBase {
     
 //Mark: Public interfaces
     init(
-        DefaultContainer container: NSPersistentContainer,
+        DefaultContext context: NSManagedObjectContext,
+//        DefaultContainer container: NSPersistentContainer,
         DefaultEntityName en: String,
         DefaultListXPath lp: String,
         DefaultQueryURLString qurls: String? = nil,
         DefaultParseConfig pc: [String: XPathParser.ParseItemConfig]? = nil
     ){
-        self.defaultContainer = container
-        self.defaultMOC = container.newBackgroundContext()
+//        self.defaultContainer = container
+//        self.defaultMOC = container.newBackgroundContext()
+        self.defaultMOC = context
         self.defaultEntityName = en
         self.defaultListXPath = lp
         self.defaultQueryURLString = qurls

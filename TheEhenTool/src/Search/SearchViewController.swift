@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
         self.InitializeCollectionView()
         self.InitializeFetchedResultsController()
         self.initializeService()
-        self.searchService.FetchData()
+        self.searchService.FetchData(WithSearchString: "", Page: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -287,13 +287,14 @@ extension SearchViewController: CollectionToggleTitleCellDelegate {
         guard let validIndexPath = self.searchCollectionView.indexPath(for: cell) else { return }
         guard let validSearch = self.searchResultsController.fetchedObjects?[validIndexPath.item] else { return }
         guard let validBookURL = validSearch.hrefURL else { return }
-        do {
-            try BookService.sharedBookService.FetchData(WithBookURL: validBookURL)
-        } catch(let error) { print( error )}
+        BookService.sharedBookService.FetchData(WithBookURL: validBookURL)
     }
     
     func ToggleTitleCellRightButtonInvoked(ForCell cell: UICollectionViewCell) {
-        return
+        guard let indexPath = self.searchCollectionView.indexPath(for: cell) else { print("No book cell found"); return }
+        guard let searchBookInfo = self.searchResultsController.fetchedObjects?[indexPath.item] else { return }
+        guard let validURL = searchBookInfo.hrefURL else { return }
+        PlayViewController.ShowTemp(InParentViewController: self, BookURL: validURL, BookId: searchBookInfo.id)
     }
 }
 //End: QueryCellDelegate
