@@ -24,6 +24,7 @@ class SyncBookDownloadWorker {
     private var dataEntityName: String
     private var dataKey: String
     private var downloadService: DownloadService
+    var currentManager: Alamofire.SessionManager
     var currentRequest: DataRequest? = nil
     var workItem: DispatchWorkItem? = nil
     private var stop = false
@@ -40,6 +41,11 @@ class SyncBookDownloadWorker {
         self.dataEntityName = dataEntityName
         self.dataKey = dataKey
         self.downloadService = downloadService
+        
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 12
+        config.timeoutIntervalForResource = 12
+        self.currentManager = Alamofire.SessionManager(configuration: config)
     }
     
     func PromiseToStartWorker() -> Promise<Int32> {
@@ -75,11 +81,13 @@ class SyncBookDownloadWorker {
                         let res = try XPathParser.ParseList(InHTML: html, ListXPath: "/", ItemConfig: downloadConfig)
                         guard res.count > 0 else { throw WorkerError.InvalidXPath }
                         guard let imageURL = res[0]["imgURLToDownload"], let validImageURL = imageURL else { throw WorkerError.InvalidKeyName }
-                        self.currentRequest = Alamofire.request(validImageURL)
+                        self.currentRequest = self.currentManager.request(validImageURL)
+//                        self.currentRequest = Alamofire.request(validImageURL)
                         guard !self.stop else { reject(WorkerError.ErrorStopped); return Promise<Data>(value: Data()) }
                         return self.currentRequest!.responseData()
                     }.then{ data -> Void in
                         guard !data.isEmpty else { return }
+                        guard !self.stop else { reject(WorkerError.ErrorStopped); return }
                         moc.performAndWait {
                             let req: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: self.dataEntityName)
                             req.predicate = NSPredicate(format: "bookPageURL == '\(validURL)'")
@@ -100,7 +108,8 @@ class SyncBookDownloadWorker {
                 }
                 fulfill(self.bookId)
             }
-            DownloadService.defaultDownloadQueue.async(execute: self.workItem!)
+            let dq = DispatchQueue(label: DownloadService.downloadQueueName)
+            dq.async(execute: self.workItem!)
         }
     }
     
