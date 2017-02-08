@@ -2,7 +2,8 @@
 An unofficial iOS client to ehentai gallery.
 
 This is a temporary message:<br>
-Currently in very early stage of development, please take your own risks on trying, I'm not responsible for any damage or lose.
+Currently in development, please take your own risks on trying, I'm not responsible for any damage or lose.
+
 More information will come in a short while
 --------------------------------------------------------------------------------------------------
 Sample screen shot
@@ -16,3 +17,4 @@ TODO
 --------------------------------------------------------------------------------------------------
 - [ ] Improve image viewer
 - [ ] Add more notifications
+- [ ] Add tests
