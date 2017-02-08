@@ -27,12 +27,13 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.InitializeView()
         self.InitializeComponentSubviews()
         self.InitializeObservers()
         self.InitializeScrollView()
         self.InitializeCollectionView()
         self.InitializeFetchedResultsController()
-        self.initializeService()
+        self.InitializeService()
         self.searchService.FetchData(WithSearchString: "", Page: 0)
     }
     
@@ -41,7 +42,13 @@ class SearchViewController: UIViewController {
         print("==========================memory warning")
     }
     
-    func initializeService() {
+    func InitializeView() {
+        if let bgImg = UIImage(named: "bg") {
+            self.view.backgroundColor = UIColor(patternImage: bgImg);
+        }
+    }
+    
+    func InitializeService() {
         self.searchService.delegate = self
     }
 

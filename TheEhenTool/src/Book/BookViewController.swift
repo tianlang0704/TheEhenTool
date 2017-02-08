@@ -16,12 +16,20 @@ class BookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.InitializeView()
         self.InitializeCollectionView()
         self.InitializeFetchedResultsController()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func InitializeView() {
+        if let bgImg = UIImage(named: "bg") {
+            self.view.backgroundColor = UIColor(patternImage: bgImg);
+        }
     }
     
     func InitializeCollectionView() {
@@ -107,6 +115,7 @@ extension BookViewController: UICollectionViewDataSource {
     
     func ConfigureCollectionViewCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionTitleCellStyle", for: indexPath) as! CollectionTitleCellStyle
+
         guard let bookInfoEntity = self.bookResultsController.fetchedObjects?[indexPath.item] else { return cell }
         
         cell.bookTitle = bookInfoEntity.bookTitle

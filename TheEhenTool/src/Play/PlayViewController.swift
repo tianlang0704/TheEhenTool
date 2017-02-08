@@ -59,6 +59,7 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.InitializeView()
         self.InitializeScrollView()
         self.InitializeGestures()
     }
@@ -78,6 +79,12 @@ class PlayViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func InitializeView() {
+        if let bgImg = UIImage(named: "bg") {
+            self.view.backgroundColor = UIColor(patternImage: bgImg);
+        }
     }
     
     func InitializeScrollView() {

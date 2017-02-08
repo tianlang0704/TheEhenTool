@@ -23,6 +23,7 @@
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vcK-jf-Kgg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                         <color key="tintColor" red="0.45176260969999998" green="0.64520063549999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="trackTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </progressView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-X8-KV1">
                         <rect key="frame" x="3" y="3" width="93.5" height="93.5"/>
@@ -69,6 +70,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="Hu3-ga-jxV" firstAttribute="leading" secondItem="Nvr-rW-v7H" secondAttribute="trailing" constant="4" id="04N-vS-DnL"/>
                     <constraint firstItem="U1e-X8-KV1" firstAttribute="left" secondItem="ZGW-mV-KYj" secondAttribute="left" constant="3" id="67h-s6-D2A"/>
@@ -86,6 +88,7 @@
                     <constraint firstItem="Nvr-rW-v7H" firstAttribute="top" secondItem="ZGW-mV-KYj" secondAttribute="topMargin" id="lrI-cp-hG5"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="page" destination="l5j-pm-NEB" id="gjf-Bd-929"/>
                 <outlet property="percentage" destination="dwQ-AE-uyw" id="hHZ-98-mbn"/>

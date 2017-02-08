@@ -31,11 +31,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tly-CX-O04">
                                 <rect key="frame" x="3" y="3" width="218" height="72"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.95205479452054798" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94818652849999996" green="0.94818652849999996" blue="0.94818652849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.18087755870821126" green="0.32420923965300608" blue="0.63619003407715735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tly-CX-O04" firstAttribute="top" secondItem="5Z2-6p-IoA" secondAttribute="top" constant="3" id="63E-Aa-dvl"/>
                             <constraint firstAttribute="trailing" secondItem="tly-CX-O04" secondAttribute="trailing" constant="3" id="6Je-iB-RF0"/>

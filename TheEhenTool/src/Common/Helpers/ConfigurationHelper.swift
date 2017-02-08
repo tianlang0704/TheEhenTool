@@ -28,7 +28,7 @@ extension EnumCollection {
 class SearchConfiguration {
     //http://g.e-hentai.org/?f_doujinshi=1&f_manga=1&f_artistcg=1&f_gamecg=1&f_western=1&f_non-h=1&f_imageset=1&f_cosplay=1&f_asianporn=1&f_misc=1&f_search=&f_apply=Apply+Filter
     //let searchQueryURLTemplate = ""
-    let searchQueryURLTemplate = "https://g.e-hentai.org/?inline_set=dm_t&{{page}}&{{options}}&{{search}}&f_apply=Apply+Filter"
+    let searchQueryURLTemplate = "https://e-hentai.org/?inline_set=dm_t&{{page}}&{{options}}&{{search}}&f_apply=Apply+Filter"
     //let searchQueryURLTemplate = "http://g.e-hentai.org/?inline_set=dm_t&{{page}}&{{options}}&{{search}}&f_apply=Apply+Filter"
     
 //    enum EHenFilterOptions: String, EnumCollection {

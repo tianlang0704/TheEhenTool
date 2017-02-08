@@ -27,11 +27,12 @@ class PreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.InitializeView()
         self.InitializeComponentSubviews()
         self.InitializeScrollView()
         self.InitializeCollectionView()
         self.InitializeFetchedResultsController()
-        self.initializeService()
+        self.InitializeService()
         self.previewService.FetchData(WithSearchString: "", Page: 0)
     }
     
@@ -39,7 +40,15 @@ class PreviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         print("==========================memory warning")
     }
-    func initializeService() {
+    
+    
+    func InitializeView() {
+        if let bgImg = UIImage(named: "bg") {
+            self.view.backgroundColor = UIColor(patternImage: bgImg);
+        }
+    }
+    
+    func InitializeService() {
         self.previewService.delegate = self
     }
     

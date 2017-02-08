@@ -29,7 +29,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pLz-M7-tqg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" red="0.91191709844559588" green="0.91191709844559588" blue="0.91191709844559588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="j0z-zM-gFO" customClass="DynamicHeightCollectionLayout" customModule="TheEhenTool" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
@@ -96,7 +96,7 @@
                             <constraint firstItem="0qI-gw-7Ov" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" id="kh1-am-ulu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Preview" id="wQa-U7-RGj"/>
+                    <tabBarItem key="tabBarItem" title="Preview" image="arrow-big-3" id="wQa-U7-RGj"/>
                     <connections>
                         <outlet property="largePreviewImage" destination="dse-hR-PRm" id="mpP-9H-lqC"/>
                         <outlet property="largePreviewView" destination="Fhl-Xi-izT" id="6kS-tS-ORE"/>
@@ -129,7 +129,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-YH-u0N">
                                 <rect key="frame" x="0.0" y="28" width="375" height="590"/>
-                                <color key="backgroundColor" red="0.91191709840000001" green="0.91191709840000001" blue="0.91191709840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="see-0m-OOL" customClass="ColumnCollectionLayout" customModule="TheEhenTool" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
@@ -150,7 +150,7 @@
                             <constraint firstItem="u8h-zo-IZV" firstAttribute="bottom" secondItem="3qI-DV-Myd" secondAttribute="bottom" id="sBo-oq-opb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Saved" id="aoo-sk-ghe"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Saved" image="arrow-big-2" id="aoo-sk-ghe"/>
                     <connections>
                         <outlet property="bookCollectionView" destination="Ium-YH-u0N" id="Jhd-cU-ozP"/>
                     </connections>
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="919"/>
         </scene>
-        <!--Download-->
+        <!--Downloading-->
         <scene sceneID="gZs-3j-P5b">
             <objects>
                 <viewController id="fXN-BK-ILL" customClass="DownloadViewController" customModule="TheEhenTool" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +177,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-UL-ZnA">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" red="0.91191709840000001" green="0.91191709840000001" blue="0.91191709840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DownloadCellStyle1" id="FKg-Ie-5GV" customClass="DownloadCellStyle1" customModule="TheEhenTool" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -279,7 +279,7 @@
                             <constraint firstItem="a8a-Po-GBb" firstAttribute="top" secondItem="0bz-bp-Egf" secondAttribute="top" id="vVJ-dD-jJ0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Download" id="XVh-7r-7Ln"/>
+                    <tabBarItem key="tabBarItem" title="Downloading" image="arrow-big-4" id="XVh-7r-7Ln"/>
                     <connections>
                         <outlet property="downloadTableView" destination="fjW-UL-ZnA" id="oJG-3g-2pT"/>
                     </connections>
@@ -378,7 +378,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-U6-IJj">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" red="0.91191709840000001" green="0.91191709840000001" blue="0.91191709840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="kHS-rW-ABD" customClass="ColumnCollectionLayout" customModule="TheEhenTool" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
@@ -445,7 +445,7 @@
                             <constraint firstItem="7Re-1s-TnW" firstAttribute="centerY" secondItem="OZ1-Qz-aBh" secondAttribute="centerY" priority="500" id="qsc-BY-FGR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="ksa-4z-Sy3"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="arrow-big-1" id="ksa-4z-Sy3"/>
                     <connections>
                         <outlet property="largeSearchImage" destination="x4U-A2-8a7" id="sxM-VI-Zit"/>
                         <outlet property="largeSearchView" destination="7Re-1s-TnW" id="Nge-RO-6VP"/>
@@ -461,4 +461,10 @@
             <point key="canvasLocation" x="936.79999999999995" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-big-1" width="30" height="30"/>
+        <image name="arrow-big-2" width="30" height="30"/>
+        <image name="arrow-big-3" width="30" height="30"/>
+        <image name="arrow-big-4" width="30" height="30"/>
+    </resources>
 </document>
