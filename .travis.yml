@@ -1,0 +1,6 @@
+language: objective-c
+cache:cocoapods
+osx_image: xcode8.2
+
+xcode_workspace: TheEhenTool.xcworkspace
+xcode_scheme: TheEhenTool
