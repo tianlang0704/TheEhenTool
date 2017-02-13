@@ -2,6 +2,13 @@ language: objective-c
 cache: cocoapods
 osx_image: xcode8.2
 
+xcode_workspace: TheEhenTool.xcworkspace
+xcode_scheme: TheEhenTool
+
+before_install:
+  - brew update
+  - brew outdated xctool || brew upgrade xctool
+
 Script: xcodebuild -workspace TheEhenTool.xcworkspace -scheme TheEhenTool -sdk iphonesimulator
 
 branches:
