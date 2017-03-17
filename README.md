@@ -8,13 +8,11 @@ More information will come in a short while
 --------------------------------------------------------------------------------------------------
 Sample screen shot
 
-<img src="Screenshots/preview.png" alt="Preview page screen shot" width="400">
-<img src="Screenshots/search.png" alt="Search page screen shot" width="400">
-<img src="Screenshots/downloading.png" alt="Downloading page screen shot" width="400">
-<img src="Screenshots/saved.png" alt="Saved page screen shot" width="400">
+<img src="Screenshots/preview.png" alt="Preview page screen shot" width="400"><img src="Screenshots/search.png" alt="Search page screen shot" width="400"><img src="Screenshots/downloading.png" alt="Downloading page screen shot" width="400"><img src="Screenshots/saved.png" alt="Saved page screen shot" width="400"><img src="Screenshots/play.png" alt="Play page screen shot" width="400">
 
 TODO
 --------------------------------------------------------------------------------------------------
+- [ ] Stablize download module
 - [ ] Improve image viewer
 - [ ] Add more notifications
 - [ ] Add tests
